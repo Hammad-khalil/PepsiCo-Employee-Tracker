@@ -57,7 +57,6 @@ const StockReport = () => {
 
   const calculatePercentage = (statusArray) => {
     const greenCount = statusArray.filter(status => status === "green").length;
-    const redCount = statusArray.filter(status => status === "red").length;
     const yellowCount = statusArray.filter(status => status === "yellow").length;
     const grayCount = statusArray.filter(status => status === "gray").length;
 
