@@ -1,12 +1,32 @@
 import { useState, useEffect } from "react";
 import "./MeetingReport.css"; // Ensure to include this CSS file
 
+// Updated employee data
 const attendees = [
-  { name: "John Doe", department: "Reliance Distribution" },
-  { name: "Jane Smith", department: "Marketing" },
-  { name: "Alice Johnson", department: "Development" },
-  { name: "Bob Brown", department: "HR" },
-  { name: "Charlie Davis", department: "Finance" }
+  { name: "ABDUL FAIZAN", department: "Radiant Distribution 2" },
+  { name: "Abdul Waheed", department: "ShanMarketing-1" },
+  { name: "Usama Fayyaz", department: "ShanMarketing-1" },
+  { name: "ADNAN ZAHID", department: "Arnial Traders" },
+  { name: "Ali Raza", department: "Reliance Distribution (Pvt) Ltd" },
+  { name: "Syed Saqlain", department: "Reliance Distribution (Pvt) Ltd" },
+  { name: "Aqil Shah", department: "Mansehra Traders" },
+  { name: "Arif Hussain", department: "Insaf Traders" },
+  { name: "Ehtisham Ali", department: "ShanMarketing Warehouse / SERVICES 2" },
+  { name: "Ibrar Hussain", department: "ShanMarketing Warehouse / SERVICES 2" },
+  { name: "Hammad Ahmed", department: "Chaudary Marketing - I" },
+  { name: "KHURRAM SHAHZAD", department: "ZAK Enterprises" },
+  { name: "Muhammad Ibrahim", department: "Yousafzai Traders" },
+  { name: "Muhammad Umair", department: "F.S.N.A Traders" },
+  { name: "Mutair Ali", department: "Radiant Distribution" },
+  { name: "Rameez Raja", department: "Gulzar Marketing" },
+  { name: "Shoaib Ahmed", department: "GECO Supplies (Pvt) Ltd" },
+  { name: "Inzimam Khan", department: "GECO Supplies (Pvt) Ltd" },
+  { name: "Syed Azam", department: "Mughal Traders" },
+  { name: "Syed Junaid", department: "Pak Trader" },
+  { name: "Tufail Fareed", department: "Chaudary Marketing - II" },
+  { name: "Waleed Ijaz", department: "Friends Distribution Chakri" },
+  { name: "Waqas Ahmed", department: "Alfaroq Agencies" },
+  { name: "Zeeshan Ali", department: "S&S Marketing" },
 ];
 
 const daysInMonth = 30; // Example for the month of September
@@ -26,7 +46,15 @@ const MeetingStatus = () => {
   // Load statuses from localStorage if available, otherwise use initial values
   const loadStatuses = () => {
     const savedStatuses = localStorage.getItem("meetingStatuses");
-    return savedStatuses ? JSON.parse(savedStatuses) : attendees.map(() => [...initialStatus]);
+    if (savedStatuses) {
+      const parsedStatuses = JSON.parse(savedStatuses);
+      // Ensure the loaded data has the same length as attendees
+      if (Array.isArray(parsedStatuses) && parsedStatuses.length === attendees.length) {
+        return parsedStatuses;
+      }
+    }
+    // If not valid, return a new array of initial statuses
+    return attendees.map(() => [...initialStatus]);
   };
 
   const [statuses, setStatuses] = useState(loadStatuses);
@@ -46,6 +74,7 @@ const MeetingStatus = () => {
   };
 
   const calculatePercentage = (statusArray) => {
+    if (!Array.isArray(statusArray)) return 0; // Ensure statusArray is an array
     const presentCount = statusArray.filter(status => status === "P").length;
     const offCount = statusArray.filter(status => status === "O").length;
 
@@ -65,8 +94,8 @@ const MeetingStatus = () => {
       <table className="meeting-table">
         <thead>
           <tr>
-            <th>KPO</th>
-            <th>Distribution</th>
+            <th>Name</th>
+            <th>Department</th>
             {/* Generate date headings */}
             {dates.map((date, index) => (
               <th key={index}>{date}</th>
@@ -80,7 +109,7 @@ const MeetingStatus = () => {
               <td>{attendee.name}</td>
               <td>{attendee.department}</td>
               {/* Display status for each date */}
-              {statuses[empIndex].map((status, dayIndex) => (
+              {statuses[empIndex]?.map((status, dayIndex) => (
                 <td
                   key={dayIndex}
                   className={`status ${status}`}
