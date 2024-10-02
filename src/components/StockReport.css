@@ -1,8 +1,16 @@
+/* Add this to the top of your CSS file */
+body {
+    margin: 0; /* Remove default body margin */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .table-container {
     padding: 20px;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make the container full width */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 h1 {
@@ -14,7 +22,7 @@ h1 {
 }
 
 .report-table {
-    width: 100%;
+    width: 100%; /* Ensure the table is full width */
     border-collapse: collapse;
     font-family: cursive;
     text-align: left;
@@ -78,23 +86,22 @@ td:last-child {
     color: black;
 }
 
-
 .indicator-chart {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .indicator-item {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .indicator-item .circle {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-right: 8px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 8px;
 }
 
 .green { background-color: green; }
@@ -102,45 +109,50 @@ td:last-child {
 .yellow { background-color: yellow; }
 .gray { background-color: gray; }
 
-
 .bar-chart-container {
-  margin-top: 20px; 
+    margin-top: 20px; 
+    display: flex; /* Add this to align items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to avoid overflow */
+    justify-content: space-between; /* Space charts evenly */
 }
 
 .bar-chart {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-basis: calc(33.33% - 10px); /* Set the width of each chart */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .bar {
-  font-size: x-large;
-  font-weight: bold;
-  height: 30px; 
-  border-radius: 5px; 
-  background-color: teal; 
-  color: white; 
-  text-align: center; 
-  transition: width 0.5s; 
-  font-weight: bold; 
-  line-height: 30px; 
-  flex-grow: 1; 
+    font-size: x-large;
+    font-weight: bold;
+    height: 30px; 
+    border-radius: 5px; 
+    background-color: teal; 
+    color: white; 
+    text-align: center; 
+    transition: width 0.5s; 
+    font-weight: bold; 
+    line-height: 30px; 
+    flex-grow: 1; 
 }
 
 .employee-label {
-  margin-left: 10px; 
-  font-weight: bold; 
-  color: brown;
+    margin-left: 10px; 
+    font-weight: bold; 
+    color: brown;
 }
+
 .chart-heading {
-  font-family: cursive;
-  font-weight: bolder;
-  font-size: 1.8rem; /* Adjust font size to a professional level */
-  color: teal; /* Dark color for a clean, professional look */
-  text-align: center; /* Center-align the heading */
-  margin: 20px 0; /* Add some spacing around the heading */
-  font-weight: bold; /* Make the font bold */
-  letter-spacing: 1px; /* Add slight spacing between letters */
-  border-bottom: 2px solid #ccc; /* Add a subtle border below the heading */
-  padding-bottom: 10px; /* Padding to give space between text and the border */
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: 1.8rem; /* Adjust font size to a professional level */
+    color: teal; /* Dark color for a clean, professional look */
+    text-align: center; /* Center-align the heading */
+    margin: 20px 0; /* Add some spacing around the heading */
+    font-weight: bold; /* Make the font bold */
+    letter-spacing: 1px; /* Add slight spacing between letters */
+    border-bottom: 2px solid #ccc; /* Add a subtle border below the heading */
+    padding-bottom: 10px; /* Padding to give space between text and the border */
 }
