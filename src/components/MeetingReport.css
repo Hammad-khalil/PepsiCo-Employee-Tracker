@@ -62,3 +62,43 @@ td {
   font-size: 16px;
 }
 
+/* MeetingReport.css */
+
+.table-container {
+  margin: 20px;
+}
+
+.meeting-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meeting-table th,
+.meeting-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.status {
+  cursor: pointer;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.chart {
+  width: 150px; /* Set a fixed width for each chart */
+  height: 150px; /* Set a fixed height for charts */
+  margin: 10px;
+  display: flex; /* Center chart within container */
+  flex-direction: column;
+  align-items: center;
+}
+
+

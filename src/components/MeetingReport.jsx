@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Bar } from "react-chartjs-2";
+import Chart from "chart.js/auto";
 import "./MeetingReport.css"; // Ensure to include this CSS file
 
 // Updated employee data
@@ -123,6 +125,44 @@ const MeetingStatus = () => {
           ))}
         </tbody>
       </table>
+
+      <h2>Attendance Charts</h2>
+      <div className="charts-container">
+        {attendees.map((attendee, empIndex) => {
+          const totalMeetingPercentage = calculatePercentage(statuses[empIndex]);
+
+          // Ensure charts are not constantly re-rendering
+          const chartData = {
+            labels: ["Total Meeting %"],
+            datasets: [
+              {
+                label: attendee.name,
+                data: [totalMeetingPercentage],
+                backgroundColor: "rgba(75, 192, 192, 0.6)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1,
+              },
+            ],
+          };
+
+          const chartOptions = {
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+              },
+            },
+          };
+
+          return (
+            <div key={empIndex} className="chart">
+              {/* <h3>{attendee.name}</h3> */}
+              <Bar data={chartData} options={chartOptions} height={100} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
