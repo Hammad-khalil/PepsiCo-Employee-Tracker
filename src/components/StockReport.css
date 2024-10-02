@@ -114,6 +114,8 @@ td:last-child {
 }
 
 .bar {
+  font-size: x-large;
+  font-weight: bold;
   height: 30px; 
   border-radius: 5px; 
   background-color: #4CAF50; 
