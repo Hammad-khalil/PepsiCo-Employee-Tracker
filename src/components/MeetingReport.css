@@ -55,6 +55,9 @@ h1 {
 
 td {
   font-size: 14px;
+  font-family: cursive;
+  font-weight: bolder;
+  color: darkgreen;
 }
 
 .total-percentage {
