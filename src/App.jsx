@@ -1,5 +1,6 @@
 // import React from 'react'
 import StockReport from './components/StockReport'
+import MeetingReport from "./components/MeetingReport"
 import Title from './components/Title'
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
 <div>      
   <Title/>
   <StockReport/>
+  <MeetingReport/>
 </div>
 
   )

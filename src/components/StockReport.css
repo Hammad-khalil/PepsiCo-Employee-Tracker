@@ -118,7 +118,7 @@ td:last-child {
   font-weight: bold;
   height: 30px; 
   border-radius: 5px; 
-  background-color: #4CAF50; 
+  background-color: teal; 
   color: white; 
   text-align: center; 
   transition: width 0.5s; 
@@ -130,4 +130,17 @@ td:last-child {
 .employee-label {
   margin-left: 10px; 
   font-weight: bold; 
+  color: brown;
+}
+.chart-heading {
+  font-family: cursive;
+  font-weight: bolder;
+  font-size: 1.8rem; /* Adjust font size to a professional level */
+  color: teal; /* Dark color for a clean, professional look */
+  text-align: center; /* Center-align the heading */
+  margin: 20px 0; /* Add some spacing around the heading */
+  font-weight: bold; /* Make the font bold */
+  letter-spacing: 1px; /* Add slight spacing between letters */
+  border-bottom: 2px solid #ccc; /* Add a subtle border below the heading */
+  padding-bottom: 10px; /* Padding to give space between text and the border */
 }

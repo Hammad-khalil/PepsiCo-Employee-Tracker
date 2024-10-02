@@ -120,7 +120,7 @@ const StockReport = () => {
           ))}
         </tbody>
       </table>
-
+ <h2 className="chart-heading">Based on Above Total Stock Report %, Here are the Charts to Analyze Better</h2>
       {/* Horizontal Bar Chart for Each Employee */}
       <div className="bar-chart-container">
         {employees.map((employee, empIndex) => {
