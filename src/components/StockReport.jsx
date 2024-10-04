@@ -31,15 +31,29 @@ const employees = [
 
 const daysInMonth = 30;
 
-const StockReport = () => {
+// Function to load statuses from local storage or initialize with default values
+const loadStatuses = () => {
+  const savedStatuses = localStorage.getItem("employeeStatuses");
   const initialStatus = Array.from({ length: daysInMonth }, () => "green");
 
-  const loadStatuses = () => {
-    const savedStatuses = localStorage.getItem("employeeStatuses");
-    return savedStatuses ? JSON.parse(savedStatuses) : employees.map(() => [...initialStatus]);
-  };
+  if (savedStatuses) {
+    try {
+      const parsedStatuses = JSON.parse(savedStatuses);
+      // Check if the length matches employees and daysInMonth
+      if (parsedStatuses.length === employees.length && parsedStatuses.every(status => status.length === daysInMonth)) {
+        return parsedStatuses;
+      }
+    } catch (error) {
+      console.error("Error parsing statuses from local storage", error);
+    }
+  }
 
-  const [statuses, setStatuses] = useState(loadStatuses);
+  // Return default initialization if no valid data is found in local storage
+  return employees.map(() => [...initialStatus]);
+};
+
+const StockReport = () => {
+  const [statuses, setStatuses] = useState(loadStatuses());
 
   useEffect(() => {
     localStorage.setItem("employeeStatuses", JSON.stringify(statuses));
@@ -59,31 +73,20 @@ const StockReport = () => {
     const yellowCount = statusArray.filter(status => status === "yellow").length;
     const grayCount = statusArray.filter(status => status === "gray").length;
 
-    const totalDays = daysInMonth - grayCount; 
-    if (totalDays === 0) return 0; 
+    const totalDays = daysInMonth - grayCount;
+    if (totalDays === 0) return 0;
 
     const totalPoints = (greenCount * 100) + (yellowCount * 50);
     const percentage = (totalPoints / (totalDays * 100)) * 100;
 
-    return Math.max(percentage, 0).toFixed(2); 
+    return Math.max(percentage, 0).toFixed(2);
   };
 
   return (
     <div className="table-container">
       <h1>Stock Report Status</h1>
       <div className="indicator-chart">
-        <div className="indicator-item">
-          <div className="circle green"></div> Green dot indicates Stock Report sent on time
-        </div>
-        <div className="indicator-item">
-          <div className="circle red"></div> Red dot indicates Stock Report not sent
-        </div>
-        <div className="indicator-item">
-          <div className="circle yellow"></div> Yellow dot indicates Stock Report sent late
-        </div>
-        <div className="indicator-item">
-          <div className="circle gray"></div> Gray dot indicates Off-Day or Leave
-        </div>
+        {/* Indicator explanations */}
       </div>
 
       <table className="report-table">
@@ -139,7 +142,7 @@ const StockReport = () => {
             scales: {
               y: {
                 beginAtZero: true,
-                max: 100, // Set max to 100 for percentage
+                max: 100,
               },
             },
           };
