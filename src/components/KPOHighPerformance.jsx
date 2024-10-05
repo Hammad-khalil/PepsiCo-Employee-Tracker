@@ -3,10 +3,10 @@ import React from 'react';
 
 // Sample data for KPOs
 const kpoData = [
-  { kpoName: 'ABDUL FAIZAN', distribution: 'Stock Department', percentage: 92 },
-  { kpoName: 'ALI AHMED', distribution: 'Meeting Department', percentage: 90 },
-  { kpoName: 'USMAN KHAN', distribution: 'Stock Department', percentage: 45 },
-  { kpoName: 'HAMZA SHAH', distribution: 'Meeting Department', percentage: 50 },
+  { kpoName: 'ADNAN ZAHID', distribution: 'Arnial Traders', percentage: 100 },
+  { kpoName: 'Muhammad Umair', distribution: 'F.S.N.A Traders', percentage: 99 },
+  { kpoName: 'Syed Junaid', distribution: 'PAk Traders', percentage: 99 },
+  { kpoName: 'Rameez Raja', distribution: 'Gulzar Marketing', percentage: 97 },
 ];
 
 const KPOHighPerformance = () => {

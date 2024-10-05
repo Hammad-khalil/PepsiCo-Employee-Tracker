@@ -3,10 +3,10 @@ import React from 'react';
 
 // Sample data for KPOs
 const kpoData = [
-  { kpoName: 'ABDUL FAIZAN', distribution: 'Stock Department', percentage: 92 },
-  { kpoName: 'ALI AHMED', distribution: 'Meeting Department', percentage: 90 },
-  { kpoName: 'USMAN KHAN', distribution: 'Stock Department', percentage: 45 },
-  { kpoName: 'HAMZA SHAH', distribution: 'Meeting Department', percentage: 50 },
+  { kpoName: 'Abdul Waheed', distribution: 'Shan Marketing 1', percentage: 88 },
+  { kpoName: 'Usama Fayyaz', distribution: 'Shan Marketing 1', percentage: 88 },
+  { kpoName: 'Inzimam Khan', distribution: 'GECO Supplies (Pvt) Ltd', percentage: 92 },
+  { kpoName: 'Shoaib Ahmed', distribution: 'GECO Supplies (Pvt) Ltd', percentage: 92 },
 ];
 
 const KPOLowPerformance = () => {
@@ -36,7 +36,7 @@ const KPOLowPerformance = () => {
                       style={{
                         ...styles.progressBar,
                         width: `${kpo.percentage}%`,
-                        backgroundColor: kpo.percentage > 70 ? '#4caf50' : '#ff9800', // Green for Low, orange for low
+                        backgroundColor: kpo.percentage > 90 ? '#4caf50' : '#ff9800', // Green for Low, orange for low
                       }}
                     ></div>
                   </div>

@@ -2,8 +2,8 @@
 import React from 'react';
 
 const StockAndMeetingSummary = () => {
-  const stockReportPercentage = 94;
-  const meetingAttendeePercentage = 94;
+  const stockReportPercentage = 94.43;
+  const meetingAttendeePercentage = 95.78;
 
   return (
     <div style={styles.container}>
@@ -22,7 +22,7 @@ const StockAndMeetingSummary = () => {
       </div>
 
       <div style={styles.card}>
-        <h2 style={styles.gradientHeading}>Combined Meeting Performance in Percentage</h2>
+        <h2 style={styles.gradientHeading}>HBL Team Combined Meeting Performance in Percentage</h2>
         <div style={styles.progressContainer}>
           <div
             style={{

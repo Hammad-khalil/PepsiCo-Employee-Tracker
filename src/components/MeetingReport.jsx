@@ -92,7 +92,7 @@ const MeetingStatus = () => {
 
   return (
     <div className="table-container">
-      <h1>Meeting Attendance Status</h1>
+      <h1>HBL Team - Meeting Attendance Status - September</h1>
 
       <table className="meeting-table">
         <thead>
