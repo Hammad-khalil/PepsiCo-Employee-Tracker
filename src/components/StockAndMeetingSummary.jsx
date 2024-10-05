@@ -50,6 +50,7 @@ const styles = {
     boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
     maxWidth: '1000px',
     margin: '50px auto',
+    fontFamily: 'cursive', // Added font family
   },
   card: {
     backgroundColor: 'white',
@@ -58,6 +59,7 @@ const styles = {
     textAlign: 'center',
     boxShadow: '0px 6px 14px rgba(0, 0, 0, 0.15)',
     width: '45%',
+    fontFamily: 'cursive', // Added font family
   },
   greenHeading: {
     fontSize: '26px',
@@ -66,6 +68,7 @@ const styles = {
     marginBottom: '20px',
     textTransform: 'uppercase',
     letterSpacing: '1.5px',
+    fontFamily: 'cursive', // Added font family
   },
   gradientHeading: {
     fontSize: '26px',
@@ -76,6 +79,7 @@ const styles = {
     letterSpacing: '1.5px',
     backgroundImage: 'linear-gradient(90deg, #00c6ff, #0072ff)', // Gradient effect
     WebkitBackgroundClip: 'text',
+    fontFamily: 'cursive', // Added font family
   },
   progressContainer: {
     position: 'relative',
@@ -84,10 +88,12 @@ const styles = {
     height: '35px',
     width: '100%',
     overflow: 'hidden',
+    fontFamily: 'cursive', // Added font family
   },
   progressBar: {
     height: '100%',
     borderRadius: '30px',
+    fontFamily: 'cursive', // Added font family
   },
   percentage: {
     position: 'absolute',
@@ -97,6 +103,7 @@ const styles = {
     fontWeight: 'bold',
     color: '#fff',
     fontSize: '20px',
+    fontFamily: 'cursive', // Added font family
   },
 };
 
