@@ -4,7 +4,8 @@ import MeetingReport from "./components/MeetingReport"
 import Title from './components/Title'
 import DotIndicates from './components/DotIndicates'
 import StockAndMeetingSummary from './components/StockAndMeetingSummary'
-import KPOPerformanceComparison from './components/KPOPerformanceComparison'
+import KPOHighPerformance from './components/KPOHighPerformance'
+import KPOLowPerformance from './components/KPOLowPerformance'
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
   <StockReport/>
   <MeetingReport/>
   <StockAndMeetingSummary/>
-  <KPOPerformanceComparison/>
+  <KPOHighPerformance/>
+  <KPOLowPerformance/>
 </div>
 
   )
